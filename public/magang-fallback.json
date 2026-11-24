@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1001,
+    "title": "Frontend Intern",
+    "company_name": "Nusantara Cloud",
+    "category": "Software Development",
+    "candidate_required_location": "Surabaya (Hybrid)",
+    "salary": "Rp 4.500.000",
+    "tags": ["React", "TypeScript", "CSS"]
+  },
+  {
+    "id": 1002,
+    "title": "Fullstack Engineering Intern",
+    "company_name": "Karya Digital Indo",
+    "category": "Software Development",
+    "candidate_required_location": "Jakarta (Remote)",
+    "salary": "Rp 5.000.000",
+    "tags": ["React", "Node.js", "TypeScript", "PostgreSQL"]
+  },
+  {
+    "id": 1003,
+    "title": "Backend Golang Intern",
+    "company_name": "Gojalan Tech",
+    "category": "Software Development",
+    "candidate_required_location": "Bandung (Onsite)",
+    "salary": "Rp 4.000.000",
+    "tags": ["Go", "Docker", "PostgreSQL", "REST API"]
+  },
+  {
+    "id": 1004,
+    "title": "Mobile Flutter Intern",
+    "company_name": "Dompet Pintar",
+    "category": "Software Development",
+    "candidate_required_location": "Jakarta (Hybrid)",
+    "salary": "Rp 4.200.000",
+    "tags": ["Flutter", "Dart", "Firebase"]
+  },
+  {
+    "id": 1005,
+    "title": "Data Analyst Intern",
+    "company_name": "Wawasan Nusantara",
+    "category": "Data",
+    "candidate_required_location": "Yogyakarta (Remote)",
+    "salary": "Rp 3.800.000",
+    "tags": ["Python", "SQL", "Tableau", "Excel"]
+  },
+  {
+    "id": 1006,
+    "title": "Machine Learning Intern",
+    "company_name": "Cerdas AI Lab",
+    "category": "Data",
+    "candidate_required_location": "Jakarta (Hybrid)",
+    "salary": "Rp 5.500.000",
+    "tags": ["Python", "PyTorch", "TensorFlow", "Docker"]
+  },
+  {
+    "id": 1007,
+    "title": "UI/UX Designer Intern",
+    "company_name": "Kreatif Studio",
+    "category": "Design",
+    "candidate_required_location": "Malang (Remote)",
+    "salary": "Rp 3.500.000",
+    "tags": ["Figma", "UI/UX", "CSS", "Wireframing"]
+  },
+  {
+    "id": 1008,
+    "title": "Product Design Intern",
+    "company_name": "Inovasi Nusantara",
+    "category": "Design",
+    "candidate_required_location": "Jakarta (Onsite)",
+    "salary": "Rp 4.000.000",
+    "tags": ["Figma", "User Research", "Prototyping"]
+  },
+  {
+    "id": 1009,
+    "title": "DevOps & Cloud Intern",
+    "company_name": "Awan Perkasa",
+    "category": "DevOps",
+    "candidate_required_location": "Bandung (Remote)",
+    "salary": "Rp 5.000.000",
+    "tags": ["Docker", "Kubernetes", "Linux", "CI/CD", "AWS"]
+  },
+  {
+    "id": 1010,
+    "title": "Site Reliability Intern",
+    "company_name": "Infrastruktur Kilat",
+    "category": "DevOps",
+    "candidate_required_location": "Jakarta (Hybrid)",
+    "salary": "Rp 4.800.000",
+    "tags": ["Linux", "Docker", "Python", "Prometheus"]
+  },
+  {
+    "id": 1011,
+    "title": "React Native Intern",
+    "company_name": "Solusi Mobilitas",
+    "category": "Software Development",
+    "candidate_required_location": "Bali (Remote)",
+    "salary": "Rp 4.500.000",
+    "tags": ["React", "TypeScript", "CSS"]
+  },
+  {
+    "id": 1012,
+    "title": "QA Automation Intern",
+    "company_name": "Uji Mutu Digital",
+    "category": "Software Development",
+    "candidate_required_location": "Semarang (Hybrid)",
+    "salary": "Rp 3.800.000",
+    "tags": ["TypeScript", "Playwright", "Jest", "Git"]
+  },
+  {
+    "id": 1013,
+    "title": "Data Engineer Intern",
+    "company_name": "Arus Data Media",
+    "category": "Data",
+    "candidate_required_location": "Surabaya (Onsite)",
+    "salary": "Rp 4.200.000",
+    "tags": ["Python", "Spark", "SQL", "Docker"]
+  },
+  {
+    "id": 1014,
+    "title": "Web Developer Intern",
+    "company_name": "Piksel Cantik",
+    "category": "Software Development",
+    "candidate_required_location": "Jakarta (Remote)",
+    "salary": "Rp 4.000.000",
+    "tags": ["React", "CSS", "TypeScript", "HTML"]
+  },
+  {
+    "id": 1015,
+    "title": "Cloud Security Intern",
+    "company_name": "Benteng Siber",
+    "category": "DevOps",
+    "candidate_required_location": "Yogyakarta (Hybrid)",
+    "salary": "Rp 4.500.000",
+    "tags": ["Linux", "Docker", "Python", "Security"]
+  }
+]
