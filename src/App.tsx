@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./App.css";
 import {
   ApplicationForm,
   JobExplorer,
@@ -7,6 +8,7 @@ import {
 } from "./components/index.ts";
 import { useLocalStorage } from "./hooks/useLocalStorage.ts";
 import type { Application } from "./types/index.ts";
+import { WarRoom } from "./components/WarRoom.tsx";
 
 type ActiveTab = "explore" | "manual" | "warroom" | "dashboard";
 
@@ -26,16 +28,16 @@ export function App() {
   const [activeTab, setActiveTab] = useState<ActiveTab>("explore");
 
   /**
-   * Menambahkan lamaran baru ke dalam state secara immutable.
-   * Entri baru diletakkan di paling depan daftar.
+- Menambahkan lamaran baru ke dalam state secara immutable.
+- Entri baru diletakkan di paling depan daftar.
    */
   const addApplication = (newApp: Application) => {
     setApplications((prev) => [newApp, ...prev]);
   };
 
   /**
-   * Memperbarui aplikasi dengan id tertentu secara immutable menggunakan updater function.
-   * Kontrak fungsi ini disiapkan untuk modul War Room / Pipeline teman tim.
+- Memperbarui aplikasi dengan id tertentu secara immutable menggunakan updater function.
+- Kontrak fungsi ini disiapkan untuk modul War Room / Pipeline teman tim.
    */
   const updateApplication = (
     id: string,
@@ -46,18 +48,28 @@ export function App() {
     );
   };
 
-  // Referensikan updateApplication agar tidak dianggap unused oleh TypeScript/ESLint
-  void updateApplication;
+  // [Bagian 2] Menghapus lamaran dari state secara immutable (dipicu oleh fitur Undo Delete)
+  const deleteApplication = (id: string) => {
+    setApplications((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  // [Bagian 2] Mengembalikan objek lamaran utuh ke state jika tombol Undo diklik dalam < 5 detik
+  const restoreApplication = (restoredApp: Application) => {
+    setApplications((prev) => {
+      if (prev.some((item) => item.id === restoredApp.id)) return prev;
+      return [restoredApp, ...prev];
+    });
+  };
 
   /**
-   * Handler penambahan skill Kapten secara immutable.
+- Handler penambahan skill Kapten secara immutable.
    */
   const handleAddSkill = (newSkill: string) => {
     setKaptenSkills((prev) => [...prev, newSkill]);
   };
 
   /**
-   * Handler penghapusan skill Kapten secara immutable.
+- Handler penghapusan skill Kapten secara immutable.
    */
   const handleRemoveSkill = (skillToRemove: string) => {
     setKaptenSkills((prev) =>
@@ -158,17 +170,15 @@ export function App() {
 
         {activeTab === "warroom" && (
           <div className="tab-pane">
-            <PlaceholderTab
-              title="War Room Pipeline Lamaran"
-              author="Teman Tim (Bagian 2)"
-              description="Pipeline Kanban interaktif untuk memantau status lamaran mulai dari WISHLIST, APPLIED, SCREENING, INTERVIEW, hingga OFFER atau REJECTED."
-              features={[
-                "Drag / klik pindah status dengan validasi state machine",
-                "Deteksi otomatis risiko Ghosting (> 14 hari tanpa kabar)",
-                "Peringatan bentrok jadwal interview (< 60 menit)",
-                "Checklist persiapan interview & log aktivitas per lamaran",
-                "Fitur Undo Delete dengan batas waktu 5 detik",
-              ]}
+            {/* [Bagian 2] War Room Pipeline, Ghosting, Bentrok Jadwal, Detail Modal & Undo Delete */}
+            <WarRoom
+              applications={applications}
+              kaptenSkills={kaptenSkills}
+              onUpdateApplication={(updatedApp) =>
+                updateApplication(updatedApp.id, () => updatedApp)
+              }
+              onDeleteApplication={deleteApplication}
+              onRestoreApplication={restoreApplication}
             />
           </div>
         )}
