@@ -2,8 +2,9 @@ import { useState } from "react";
 import "./App.css";
 import {
   ApplicationForm,
+  Dashboard,
+  InterviewPrepTimer,
   JobExplorer,
-  PlaceholderTab,
   SkillProfile,
 } from "./components/index.ts";
 import { useLocalStorage } from "./hooks/useLocalStorage.ts";
@@ -179,23 +180,14 @@ export function App() {
               }
               onDeleteApplication={deleteApplication}
               onRestoreApplication={restoreApplication}
+              renderInterviewPrep={(app) => <InterviewPrepTimer application={app} />}
             />
           </div>
         )}
 
         {activeTab === "dashboard" && (
           <div className="tab-pane">
-            <PlaceholderTab
-              title="Dashboard Metrik & Komparator Tawaran"
-              author="Teman Tim (Bagian 3)"
-              description="Analisis performa pencarian magang, rasio konversi per tahap, serta perbandingan detail kompensasi dan tunjangan offer."
-              features={[
-                "Statistik tingkat kelulusan dari Applied ke Interview",
-                "Visualisasi distribusi status lamaran",
-                "Offer Comparator: perbandingan gaji, mode kerja, dan benefit",
-                "Export ringkasan lamaran ke format JSON",
-              ]}
-            />
+            <Dashboard applications={applications} kaptenSkills={kaptenSkills} />
           </div>
         )}
       </main>

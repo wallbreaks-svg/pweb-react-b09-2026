@@ -989,3 +989,41 @@ body {
     width: 100%;
   }
 }
+
+/* ==========================================================================
+   Dashboard, Offer Comparator & Interview Prep Timer
+   ========================================================================== */
+.dashboard { display: flex; flex-direction: column; gap: 24px; }
+.stat-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; }
+.stat-card { background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 16px; display: flex; flex-direction: column; gap: 4px; box-shadow: var(--shadow-sm); }
+.stat-card-label { font-size: 0.8rem; font-weight: 600; color: var(--gray-600); }
+.stat-card-value { font-size: 2rem; font-weight: 800; color: var(--gray-900); line-height: 1.1; }
+.stat-card-hint { font-size: 0.72rem; color: var(--gray-500); }
+.stat-card-danger { border-color: var(--danger-border); background: var(--danger-bg); }
+.stat-card-danger .stat-card-value { color: var(--danger); }
+.stat-card-success { border-color: var(--success-border); background: var(--success-bg); }
+.stat-card-success .stat-card-value { color: var(--success); }
+
+.comparator-card { background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 20px; }
+.comparator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+.comparator-col { border: 2px solid var(--gray-200); border-radius: var(--radius-md); padding: 14px; }
+.comparator-col-best { border-color: var(--success); background: var(--success-bg); }
+.comparator-col-title { margin: 0 0 6px; font-size: 1rem; }
+.comparator-col-title small { display: block; font-weight: 400; color: var(--gray-600); }
+.best-badge { display: inline-block; font-size: 0.75rem; font-weight: 700; color: var(--success); background: #fff; border: 1px solid var(--success-border); padding: 3px 10px; border-radius: var(--radius-full); margin-bottom: 8px; }
+.comparator-list { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; font-size: 0.9rem; }
+.comparator-list dt { color: var(--gray-600); }
+.comparator-list dd { margin: 0; font-weight: 600; }
+.comparator-list small { font-weight: 400; color: var(--gray-500); }
+.comparator-total { font-size: 1.3rem; color: var(--primary); }
+
+.prep-timer { display: flex; flex-direction: column; gap: 12px; align-items: stretch; }
+.prep-question-card { background: var(--primary-light); border: 1px solid var(--primary-border); border-radius: var(--radius-md); padding: 14px 16px; }
+.prep-question-count { font-size: 0.75rem; font-weight: 700; color: var(--primary); text-transform: uppercase; }
+.prep-question-text { margin: 6px 0 0; font-size: 1.05rem; font-weight: 600; }
+.prep-clock { font-family: var(--font-mono); font-size: 3.5rem; font-weight: 800; text-align: center; color: var(--gray-900); }
+.prep-clock-warn { color: var(--warning); }
+.prep-clock-over { color: var(--danger); }
+.prep-controls { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+
+@media (max-width: 640px) { .comparator-grid { grid-template-columns: 1fr; } }
